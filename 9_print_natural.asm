@@ -21,9 +21,7 @@ section .bss
   digits:
   ; Seems like 18446744073709551615 is the biggest number that can be stored with 64 bits
   ; and it's string representation "18446744073709551615" has length 20
-    resb 21
-  digits_index:
-    resb 8 ; 8 bytes == 64 bits
+    resb 20
 
 section .text
   global _start
@@ -44,9 +42,7 @@ _print_newline:
   ret
 
 _print_natural:
-  mov rcx, digits
-  mov [digits_index], rcx ; digits_index will store a pointer to digits
-
+  mov rcx, digits ; rcx will be a pointer to the digits character array
 
   mov rbx, 10
 ._loop_1:
@@ -54,20 +50,16 @@ _print_natural:
   div rbx
 
   add dl, 48
-  mov rcx, [digits_index]
   mov [rcx], dl
 
   inc rcx
-  mov [digits_index], rcx
 
   cmp rax, 0
   jne ._loop_1
   ; at this point digits should store the digits of rax in reverse ordered (starting with 0)
   ; Now we'll just print each character one by one in reverse
 ._loop_2:
-  mov rcx, [digits_index]
   dec rcx
-  mov [digits_index], rcx
   
   push rcx ; saving rcx
   ; ===printing one character
