@@ -1,4 +1,5 @@
 app.o
+app.lst
 app
 
 # Ignore temporary vim files.
