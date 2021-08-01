@@ -1,10 +1,11 @@
 Going through https://www.youtube.com/playlist?list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn
 
 ```
-nasm -f elf64 -o app.o 0_hello.asm
-ld app.o -o app
+nasm -g -f elf64 -o app.o 0_hello.asm
+ld -g app.o -o app
 ./app
 ```
+-g is there for debugging information (for gdb (ddd))
 
 
 Linux x86_64 calling convention
