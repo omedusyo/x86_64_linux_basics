@@ -1,11 +1,13 @@
 Going through https://www.youtube.com/playlist?list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn
 
 ```
-nasm -g -f elf64 -o app.o 0_hello.asm
+nasm -g -F dwarf -l app.lst -f elf64 -o app.o  13_debugger.asm
 ld -g app.o -o app
 ./app
 ```
--g is there for debugging information (for gdb (ddd))
+`-g` is there for debugging information (for gdb (ddd))
+Specifically `-F dwarf` tells the assembler to use dwarf format https://en.wikipedia.org/wiki/DWARF
+`-l app.lst` is additional debugging information
 
 
 Linux x86_64 calling convention
