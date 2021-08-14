@@ -30,3 +30,11 @@ Linux x86_64 calling convention
 * See https://wiki.osdev.org/System_V_ABI for more details
 * High level explanation at https://www.youtube.com/watch?v=wt7a5BOztuM
 
+
+There's no
+* `mov address1, address2`
+* `push 0xff00aa00110012cd`, the literal is too big
+** you can do
+   `mov rax, 0xff00aa00110012cd
+    push rax`
+
