@@ -64,35 +64,3 @@ _sum:
   pop rbp
   ret
 
-
-; int square(x) {
-;   int xSq = x*x;
-;   return xSq;
-; }
-_square:
-  ; function prologue
-
-
-  ; local vars
-  ; function body
-
-  ; function exit
-
-  ret
-
-; int pyth(x, y) {
-;   int xSq = x*x;
-;   int ySq = y*y;
-;   int sum = xSq + ySq;
-;   return sum;
-; }
-_pyth:
-  ; function prologue
-
-
-  ; local vars
-  ; function body
-
-  ; function exit
-  ret
-
