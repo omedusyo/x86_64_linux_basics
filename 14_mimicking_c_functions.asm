@@ -14,9 +14,9 @@ exit:
   syscall
 
 
-; int sum(n) {
-;   int i = 0;
-;   int s = 0;
+; int64 sum(n) {
+;   int64 i = 0;
+;   int64 s = 0;
 ;   for (i = 0; i < n; i++) {
 ;     s = s + i;
 ;   }
